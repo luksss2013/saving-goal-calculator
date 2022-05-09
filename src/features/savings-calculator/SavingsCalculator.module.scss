@@ -1,0 +1,29 @@
+.savings {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    .simulation {
+        display: flex;
+        column-gap: 2em;
+
+        @media (max-width: 500px) {
+            flex-direction: column;
+            row-gap: 16px;
+        }
+    
+        .amount {
+            flex: 5;
+        }
+    
+        .reach {
+            flex: 4;
+        }
+    }
+
+    .cta {
+        max-width: 320px;
+        width: 100%;
+        align-self: center;
+    }
+}

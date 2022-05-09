@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    column-gap: 1em;
+    .icon {
+        width: 6em;
+    }
+
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

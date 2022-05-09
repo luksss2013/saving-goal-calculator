@@ -1,0 +1,17 @@
+.layout {
+    background-color: #F8F8FF;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5em;
+    height: 100vh;
+
+    .header {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 120%;
+        text-align: center;
+        color: #1B31A8;
+
+        text-align: center;
+    }
+}

@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+    .label {
+        font-weight: 400;
+        font-size: 16px;
+        color: #1E2A32;
+        margin-bottom: 0.5em;
+    }
+
+    .input {
+        display: flex;
+        flex: 1 1 1;
+        border: 1px solid #E9EEF2;
+        border-radius: 4px;
+        height: 4em;
+        align-items: center;
+    
+        .prefix {
+            display: flex;
+            width: 3em;
+            place-content: center;
+            cursor: pointer;
+        }
+    
+        .suffix {
+            display: flex;
+            width: 3em;
+            place-content: center;
+            cursor: pointer;
+        }
+    
+        .children {
+            flex: 1;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
