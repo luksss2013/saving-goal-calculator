@@ -3,11 +3,12 @@ import React from 'react';
 
 interface ButtonProps {
     children: JSX.Element | string
+    onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export default function Button({ children }: ButtonProps) {
+export default function Button({ children, onClick }: ButtonProps) {
 
     return (
-        <button className={styles.button}>{children}</button>
+        <button onClick={onClick} className={styles.button}>{children}</button>
     )
 }

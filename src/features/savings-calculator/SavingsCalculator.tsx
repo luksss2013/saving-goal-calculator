@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Amount from "../../components/amount/Amount";
 import Button from "../../components/button/Button";
 import Card from "../../components/card/Card";
@@ -13,6 +13,30 @@ const nextMonthDate = new Date(date.getFullYear(), date.getMonth() + 1);
 export default function SavingsCalculator() {
   const [amount, setAmount] = useState("0");
   const [reachDate, setReachDate] = useState(nextMonthDate);
+
+  useEffect(() => {
+    getFromLocalStorage();
+  }, []);
+
+  function getFromLocalStorage() {
+    const calculatorData = localStorage.getItem("calculator");
+
+    if (calculatorData) {
+      const { amount, reachDate } = JSON.parse(calculatorData);
+
+      setAmount(amount);
+      setReachDate(new Date(reachDate));
+    }
+  }
+
+  function persistInLocalStorage() {
+    const persistData = {
+      amount,
+      reachDate,
+    };
+
+    localStorage.setItem("calculator", JSON.stringify(persistData));
+  }
 
   return (
     <Card>
@@ -32,7 +56,7 @@ export default function SavingsCalculator() {
         <Calculator amount={amount} reachDate={reachDate} />
 
         <div className={styles.cta}>
-          <Button>Confirm</Button>
+          <Button onClick={() => persistInLocalStorage()}>Confirm</Button>
         </div>
       </div>
     </Card>

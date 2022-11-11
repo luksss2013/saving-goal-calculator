@@ -1,0 +1,1 @@
+export const goals = ['college', 'vacation', 'car', 'wedding', 'emergency-fund', 'baby'];
