@@ -1,0 +1,16 @@
+.goal {
+    border-radius: 8px;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+
+    .title {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+}

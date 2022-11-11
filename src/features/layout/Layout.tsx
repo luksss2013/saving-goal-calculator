@@ -3,6 +3,7 @@ import TopMenu from "./top-menu/TopMenu";
 import Content from "../../components/content";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SavingsCalculatorPage from "../savings-calculator/SavingCalculatorPage";
+import GoalsList from "../savings-calculator/goals-list/GoalsList";
 
 export default function Layout() {
   return (
@@ -13,9 +14,9 @@ export default function Layout() {
         <Content>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<>teste</>} />
+              <Route path="/" element={<GoalsList />} />
               <Route
-                path="/saving-calculator"
+                path="/saving-calculator/:goalId"
                 element={<SavingsCalculatorPage />}
               ></Route>
             </Routes>

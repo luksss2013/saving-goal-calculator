@@ -1,0 +1,54 @@
+.goal {
+    border-radius: 8px;
+    background-color: #FFF;
+    flex-direction: column;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+
+    .button {
+        align-self: stretch;
+        padding-top: 8px;
+    }
+
+    .label {
+        font-size: 12px;
+    }
+
+    .info {
+        display: flex;
+        border: 1px solid #E9EEF2;
+        border-radius: 8px;
+        padding: 12px 16px 12px 16px;
+        gap: 16px;
+        flex: 1;
+        flex-grow: 0;
+        align-self: stretch;
+
+        .amount {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            text-align: center;
+
+            .value {
+                font-weight: 600;
+                color: #0079FF;
+            }
+        }
+
+        .reach {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+
+            .value {
+                font-weight: 600;
+                color: #1E2A32;
+            }
+        }
+    }
+}

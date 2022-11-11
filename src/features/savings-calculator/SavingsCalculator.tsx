@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Amount from "../../components/amount/Amount";
 import Button from "../../components/button/Button";
 import Card from "../../components/card/Card";
@@ -13,19 +14,22 @@ const nextMonthDate = new Date(date.getFullYear(), date.getMonth() + 1);
 export default function SavingsCalculator() {
   const [amount, setAmount] = useState("0");
   const [reachDate, setReachDate] = useState(nextMonthDate);
+  const { goalId } = useParams();
 
   useEffect(() => {
     getFromLocalStorage();
   }, []);
 
   function getFromLocalStorage() {
-    const calculatorData = localStorage.getItem("calculator");
+    if(goalId) {
+      const calculatorData = localStorage.getItem(goalId);
 
-    if (calculatorData) {
-      const { amount, reachDate } = JSON.parse(calculatorData);
-
-      setAmount(amount);
-      setReachDate(new Date(reachDate));
+      if (calculatorData) {
+        const { amount, reachDate } = JSON.parse(calculatorData);
+  
+        setAmount(amount);
+        setReachDate(new Date(reachDate));
+      }
     }
   }
 
@@ -35,7 +39,9 @@ export default function SavingsCalculator() {
       reachDate,
     };
 
-    localStorage.setItem("calculator", JSON.stringify(persistData));
+    if(goalId) {
+      localStorage.setItem(goalId, JSON.stringify(persistData));
+    }
   }
 
   return (

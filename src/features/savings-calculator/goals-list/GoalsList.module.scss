@@ -1,0 +1,6 @@
+.goals {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    grid-auto-rows: 1fr;
+}
