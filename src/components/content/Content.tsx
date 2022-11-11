@@ -2,7 +2,7 @@ import styles from './Content.module.scss';
 import React from 'react';
 
 interface ContentProps {
-    children: JSX.Element[],
+    children: JSX.Element | JSX.Element[],
 }
 
 export default function Content({ children }: ContentProps) {

@@ -1,8 +1,8 @@
 import styles from "./Layout.module.scss";
 import TopMenu from "./top-menu/TopMenu";
 import Content from "../../components/content";
-import SavingsCalculator from "../savings-calculator/SavingsCalculator";
-import React from 'react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SavingsCalculatorPage from "../savings-calculator/SavingCalculatorPage";
 
 export default function Layout() {
   return (
@@ -11,9 +11,15 @@ export default function Layout() {
 
       <section className={styles.content}>
         <Content>
-          <h2 className={styles.header}>Let's plan your <b>saving goal.</b></h2>
-          
-          <SavingsCalculator />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<>teste</>} />
+              <Route
+                path="/saving-calculator"
+                element={<SavingsCalculatorPage />}
+              ></Route>
+            </Routes>
+          </BrowserRouter>
         </Content>
       </section>
     </div>
